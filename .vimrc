@@ -1,3 +1,6 @@
+syntax on
+filetype plugin on
+
 
 let mapleader = "-"
 
