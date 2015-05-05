@@ -1,0 +1,12 @@
+.loop-button {
+    cursor: pointer !important;
+}
+
+
+.playbackTitle__linkContainer{
+    width: 173px;
+}
+
+.playbackTitle__progress {
+    left: -87px !important;
+}

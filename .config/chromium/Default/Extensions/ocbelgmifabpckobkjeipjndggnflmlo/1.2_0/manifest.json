@@ -1,0 +1,21 @@
+{
+   "content_scripts": [ {
+      "css": [ "modules/content/content.css" ],
+      "js": [ "modules/common/underscore-min.js", "modules/common/jquery.min.js", "modules/content/PageEnvironment.js", "modules/content/PageEnvironment.js", "modules/content/content.js" ],
+      "matches": [ "*://soundcloud.com/*" ]
+   } ],
+   "description": "Adds a button to SoundCloud for repeating the current song.",
+   "icons": {
+      "128": "icons/icon128.png",
+      "19": "icons/icon19.png",
+      "38": "icons/icon38.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjkY+QjZJEIbqHPk6FqykIWt2jDkoekPg7x7htser7Hw4lvrGDzNfk/oIAz2/xWNWR658DKYrvvBUyQEd7LOVlpijOH/IhcLVOFETSj2Bp9lquPji7LdUrDujhFMFYmu9vwcry7hh1ucyCFGHH6dq1DJiP3kvu1tWVkEQxiDBFSnAZt1VRjNKLrsDKdWx6swKIf6/CkmD2KZuc965hnaojlgVAh/njEIztgTtFsjZ+4jjYQ9IJ/kuTHH2/hgqlJmRl5SSKcjkfgY3OECXBapn+DDoUNxV3lQUml5Qzyps0tz6XlYNPLFONUA4CfW28B02N22PF3RCyBBzSIUoz3D2BQIDAQAB",
+   "manifest_version": 2,
+   "name": "SoundCloud Repeat for Chrome",
+   "permissions": [ "tabs", "*://soundcloud.com/*" ],
+   "short_name": "SoundCloud Repeat",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.2",
+   "web_accessible_resources": [ "modules/content/repeat.png", "modules/content/repeat_small.png" ]
+}

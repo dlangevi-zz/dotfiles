@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title>Custom new tab options</title>
+	<style>
+		body {
+			font-family: Arial, sans;
+			color: #808288;
+			font-size:0.65em;
+		}	
+		
+		a {
+			color: #2191c4;
+		}
+		
+		#container {
+			padding-top: 20px;
+		}
+		
+		#footer {
+			margin-top: 50px;
+		}
+	</style>
+	<script type="text/Javascript">
+	// saves options to localStorage
+	function save_options() {
+		var url = document.getElementById("url");
+		localStorage["url"] = url.value;
+		var status = document.getElementById("status");
+		status.innerHTML = "Options saved.";
+		setTimeout(function() {
+			status.innerHTML = "";
+		}, 850);
+	}
+
+	function restore_options() {
+		var urlValue = localStorage["url"];
+		if(!urlValue) {
+			return;
+		}
+		var url = document.getElementById("url");
+		url.value = urlValue; 
+	}
+	</script>	
+</head>
+
+<body onload="restore_options()">
+<div id="container" align="center">
+<img src="icon_48.png" />
+<h1>Custom new tab options</h1>
+URL: <input id="url" type="text"></input><br />
+<p>Enter full URL including the "http://". For example, to open google.com, type in http://www.google.com</p>
+<p>To open an empty page, leave this field blank.</p>
+<button onclick="save_options()">Save</button>
+<div id="status"></div>
+<div id="footer">
+	Authored by: <a href="mailto:alankarmisra@gmail.com">Alankar Misra</a><br />
+	Icon courtesy: <a href="http://icondock.com" target="_blank">IconDock</a>
+</div>
+</div>
+</body>
+</html>
