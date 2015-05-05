@@ -12,7 +12,7 @@ eval "$(dircolors ~/.dircolors)";
 stty -ixon
 
 # update path
-export PATH=$HOME/bin:$HOME/sys161/bin:$HOME/sys161/tools/bin:$HOME/.cabal/bin:$PATH
+export PATH=$HOME/bin:$HOME/.cabal/bin:$HOME/mosh/install/mosh/bin:/u/wbcowan/gnuarm-4.0.2/libexec/gcc/arm-elf/4.0.2:/u/wbcowan/gnuarm-4.0.2/arm-elf/bin:$PATH
 # set editor
 export EDITOR=vim
 
@@ -20,7 +20,7 @@ export EDITOR=vim
 # set cscope (will later create a script to automate this)
 export CSCOPE_DB=/home/dlangevi/cs350/os161/os161-1.99/cscope_os161
 
-
+alias chromium='chromium-browser'
 alias vi='vim' # hehehe
 alias t='./.todo/todo.sh'
 alias stalk='ldapsearch -x -h uwladp.uwaterloo.ca -b "dc=uwaterloo,dc=ca"'

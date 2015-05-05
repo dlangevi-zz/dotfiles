@@ -33,7 +33,7 @@ set foldlevel=99
 set hidden
 set softtabstop=3
 set tabstop=3
-
+set shiftwidth=3
 " Always show the status bar (windowname %of_page)
 set laststatus=2
 
