@@ -65,3 +65,5 @@ inoremap <C-w><C-w> <esc><C-w><C-w>
 
 nnoremap <leader>s :source<Space>$MYVIMRC<cr>
 nnoremap <leader>e :ls<cr>:edit<Space>#
+nnoremap <leader>c I//   <esc>A   //<esc>Yp^k$r/p
+

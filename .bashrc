@@ -17,6 +17,8 @@ export PATH=$HOME/bin:$HOME/.cabal/bin:$HOME/mosh/install/mosh/bin:/u/wbcowan/gn
 export EDITOR=vim
 
 
+export TERM=xterm
+
 # set cscope (will later create a script to automate this)
 export CSCOPE_DB=/home/dlangevi/cs350/os161/os161-1.99/cscope_os161
 
