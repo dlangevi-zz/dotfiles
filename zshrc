@@ -1,6 +1,26 @@
-# Created by newuser for 5.1.1
-export EDITOR=vim
-export VISUAL=vim
+#
+# .zshrc is sourced in interactive shells.
+# It should contain commands to set up aliases,
+# functions, options, key bindings, etc.
+#
+
+# Source global definitions
+if [[ -f /etc/zshrc ]]; then
+  . /etc/zshrc
+fi
+
+# Source Facebook definitions
+if [[ -f /usr/facebook/ops/rc/master.zshrc ]]; then
+  . /usr/facebook/ops/rc/master.zshrc
+elif [[ -f /mnt/vol/engshare/admin/scripts/master.zshrc ]]; then
+  . /mnt/vol/engshare/admin/scripts/master.zshrc
+fi
+
+export EDITOR=~/bin/vim
+export VISUAL=~/bin/vim
+
+alias vi=~/bin/vim
+alias vim=~/bin/vim
 autoload -Uz compinit promptinit
 compinit
 promptinit
@@ -8,24 +28,16 @@ promptinit
 autoload -Uz colors && colors
 
 
-function exitstatus()
-{
-        local STATUS=$?
-        # echo $STATUS
-        if [[ $STATUS == 0 ]]; then
-                echo "$STATUS"
-        else
-                echo "$STATUS"
-        fi
-}
+setopt prompt_subst
 
-PROMPT="%{$fg_bold[green]%}%n@home %{$fg_bold[blue]%}%1~ $ %{$reset_color%}"
-#PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}home %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}%# "
-RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
 
-local knownhosts 
-knownhosts=( ${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[0-9]*}%%\ *}%%,*} ) 
-zstyle ':completion:*:(ssh|scp|sftp):*' hosts $knownhosts 
+PROMPT="%{$fg_bold[red]%}dev: %{$fg_bold[green]%}%n@%m %{$fg_bold[blue]%}%1~ $ %{$reset_color%}"
+RPROMPT="[%(?,%{$fg_bold[green]%},%{$fg_bold[red]%})%?%{$reset_color%}]"
+
+# PATH="$HOME/bin $path"
+# export to sub-processes (make it inherited by child processes)
+# export PATH
+
 
 #allow tab completion in the middle of a word
 setopt COMPLETE_IN_WORD
@@ -48,13 +60,10 @@ HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 setopt autocd extendedglob notify
-bindkey -e
+bindkey -v
+bindkey '^R' history-incremental-pattern-search-backward
+bindkey '^P' up-line-or-history
+bindkey '^N' down-line-or-history
+
 # End of lines configured by zsh-newuser-install
-
-alias ls='ls --color=auto'
-
-# Source global definitions
-if [[ -f /etc/zshrc ]]; then
-  . /etc/zshrc
-fi
 
