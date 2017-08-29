@@ -16,11 +16,10 @@ elif [[ -f /mnt/vol/engshare/admin/scripts/master.zshrc ]]; then
   . /mnt/vol/engshare/admin/scripts/master.zshrc
 fi
 
-export EDITOR=~/bin/vim
-export VISUAL=~/bin/vim
+export EDITOR=vim
+export VISUAL=vim
 
-alias vi=~/bin/vim
-alias vim=~/bin/vim
+alias vi=vim
 autoload -Uz compinit promptinit
 compinit
 promptinit
