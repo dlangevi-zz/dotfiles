@@ -30,12 +30,12 @@ autoload -Uz colors && colors
 setopt prompt_subst
 
 
-PROMPT="%{$fg_bold[red]%}dev: %{$fg_bold[green]%}%n@%m %{$fg_bold[blue]%}%1~ $ %{$reset_color%}"
+PROMPT="%{$fg_bold[green]%}%n@%m %{$fg_bold[blue]%}%1~ $ %{$reset_color%}"
 RPROMPT="[%(?,%{$fg_bold[green]%},%{$fg_bold[red]%})%?%{$reset_color%}]"
 
-# PATH="$HOME/bin $path"
+PATH="$HOME/bin:$PATH"
 # export to sub-processes (make it inherited by child processes)
-# export PATH
+export PATH
 
 
 #allow tab completion in the middle of a word
