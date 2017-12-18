@@ -1,4 +1,0 @@
-[submodule "dotvim"]
-	path = dotvim
-	url = https://github.com/dlangevi/dotvim.git
-  branch = master
